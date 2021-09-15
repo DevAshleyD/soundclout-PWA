@@ -1,0 +1,273 @@
+@mixin album-image {
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin color {
+    background: #f50;
+    background: linear-gradient(#f70,#f30);
+}
+
+.spotlight {
+    margin: 5% 17% 10%;   
+    font-family: "Montserrat" , sans-serif; 
+    text-align: center;
+
+    @media only screen and (min-width: 2600px) {
+        margin-top: 7%;
+    }
+
+    @media only screen and (min-width: 1760px) {
+        margin: 3% 10% 10%;
+    }
+
+    @media only screen and (max-width: 1100px) {
+        margin-top: 10%;
+    }
+
+    @media only screen and (max-width: 525px) {
+        margin: 12% 0 0;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 500px 500px;
+        grid-gap: 50px;
+        justify-content: center;
+        margin-bottom: 6%;
+        font-family: 'Montserrat' , sans-serif;
+
+        @media only screen and (max-width: 1400px) {
+            grid-template-columns: 450px 450px;
+        }
+
+        @media only screen and (max-width: 950px) {
+            grid-template-columns: 600px;
+        }
+
+        @media only screen and (max-width: 700px) {
+            grid-template-columns: 500px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            margin-bottom: 4em;
+        }
+
+        @media only screen and (max-width: 500px) {
+            grid-template-columns: 375px;
+        }
+
+        @media only screen and (max-width: 400px) {
+            grid-template-columns: 350px;
+        }
+
+        &--link {
+            height: 500px;
+            width: inherit;
+            min-width: 400px;
+            margin: 0.500em;
+            box-shadow: -2px 2px 40px 0 rgba(0, 0, 0, 0.18);
+            border-radius: 3px;
+            transition: .2s ease-in-out;
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+
+            @media only screen and (min-width: 2000px) {
+                max-width: 450px;
+            }
+
+            @media only screen and (max-width: 500px) {
+                min-width: 300px;
+                height: 350px;
+            }
+
+            @media only screen and (max-width: 400px) {
+                min-width: 250px;
+            }
+
+            &:hover {
+                transform: scale(1.02);
+                transition: .2s ease-in-out;
+
+                @media only screen and (max-width: 1330px) {
+                    transform: none;
+                    transition: none;
+                }
+            }
+        }
+
+        &__image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 500px;
+            width: -webkit-fill-available;
+            object-fit: cover;
+            object-position: center;
+            z-index: -2;
+
+            @media only screen and (max-width: 500px) {
+                height: 350px;  
+            }
+        }
+
+        &--overlay {
+            display: none;
+            color: #fff;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%);
+
+            @media only screen and (max-width: 1330px) {    
+                display: block;
+                display: flex;
+                flex-direction: column;
+                height: inherit;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+        &__heading {
+            font-size: 1.2em;
+            align-self: center;
+            margin-bottom: 0.438em;
+
+            @media only screen and (max-width: 1440px) and (max-height: 1400px) {
+                font-size: 1em;
+            }
+
+            @media only screen and (max-width: 1330px) {  
+                text-align: center;
+            }
+
+            @media only screen and (max-width: 900px) {
+                font-size: 1.2em;
+            }
+
+            @media only screen and (max-width: 630px) {
+                font-size: 1em;
+            }
+
+
+            @media only screen and (max-width: 350px) {
+                font-size: .9em;
+            }
+            
+            @media only screen and (max-width: 280px) {
+                font-size: .9em;
+            }
+        }
+
+        &__description {
+            font-size: .9em;
+            text-align: left;
+            align-self :center;
+            margin-bottom: 20px;
+
+            @media only screen and (max-width: 1440px) and (max-height: 1400px) {
+                font-size: .8em;
+            }
+
+            @media only screen and (max-width: 1330px) {
+                text-shadow: -2px 2px 2px #999;
+            }
+
+            @media only screen and (max-width: 900px) {
+                font-size: 1em;
+            }
+
+            @media only screen and (max-width: 630px) {
+                font-size: .8em;
+            }
+
+
+            @media only screen and (max-width: 350px) {
+                font-size: .75em;
+            }
+
+            @media only screen and (max-width: 280px) {
+                font-size: .65em;
+            }
+            
+        }
+
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-evenly;
+        font-family: 'Montserrat' , sans-serif;
+
+        &__title {
+            font-size: .9em;
+            margin-bottom: 2%;
+        }
+
+        &__artist {
+            font-size: 2.5em;
+            color: #4F4F4F;
+            margin-bottom: 2%;
+
+            @media only screen and (max-width: 500px) {
+                text-align: center;
+            }
+        }
+
+        &__bio {
+            font-size: .88em;
+        }
+
+        &__button {
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-decoration: none;
+            background-color: #4F4F4F;
+            padding:16px 48px 18px;
+            border-radius: 5px;
+            width: fit-content;
+            transition: .3s;
+            z-index: 4;
+            margin-top: 4%;
+
+            @media only screen and (max-width: 500px) {
+                margin: 0 auto;
+                margin-top: 22px;
+            }
+        }
+    }
+}
+
+.drake {
+    background: url(/images/artist/drake.png);
+    @include album-image();
+}
+
+
+.meek {
+    background: url(/images/artist/meek.jpg);
+    @include album-image();
+    background-position: center;
+}
+
+.featured__wrapper--link:hover .featured__wrapper--overlay {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    text-align: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 1440px) and (max-height: 1400px) {
+    .featured__wrapper--link:hover .featured__wrapper--overlay {
+        display: flex;
+        flex-direction: column;
+        height: inherit;
+        text-align: center;
+        justify-content: center;
+    }
+}
